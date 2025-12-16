@@ -1,0 +1,117 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* ความสูงเต็มหน้าจอ */
+  width: 100%;
+  display: block;    /* เลิกใช้ Flex ที่ทำให้เบี้ยว */
+  background-color: #242424; /* สีพื้นหลัง (แก้เป็นสีที่ชอบได้) */
+}
+
+
+/* src/App.css */
+
+/* จัดหน้าจอหลักให้อยู่ตรงกลาง */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* หัวข้อใหญ่ */
+h1 {
+  color: #f7a6d3; /* หรือสีขาวถ้า Background คุณเป็นสีดำ */
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* กล่องฟอร์มกรอกข้อมูล */
+.note-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.note-input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  width: 300px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.note-input:focus {
+  border-color: #ff9800;
+}
+
+.add-btn {
+  padding: 12px 25px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: #e68900;
+}
+
+/* โซนวางโน้ต (Grid) */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* จัดเรียงอัตโนมัติ */
+  gap: 20px;
+}
+
+/* ตัวกระดาษโน้ตแต่ละใบ */
+.note-card {
+  background-color: #fdfd96; /* สีเหลืองพาสเทล */
+  color: #333;
+  padding: 20px;
+  height: 200px; /* ความสูงคงที่ */
+  border-radius: 0 0 40px 0; /* มุมพับ */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 18px;
+  word-wrap: break-word; /* ตัดคำถ้ายาวเกิน */
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: scale(1.05); /* ขยายใหญ่ขึ้นนิดหน่อยเมื่อเอาเมาส์ชี้ */
+}
+
+/* ปุ่มลบ */
+.delete-btn {
+  align-self: flex-end;
+  background: none;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background: #ff4444;
+  color: white;
+}

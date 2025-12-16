@@ -16,13 +16,24 @@ function NoteForm({ onAdd }: NoteFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    //<form onSubmit={handleSubmit}>
+    //  <input
+    //  type="text"
+    //  value={text}
+    //  onChange={(e) => setText(e.target.value)}
+    //  />
+    //  <button type="submit">Add</button>
+
+    <form onSubmit={handleSubmit} className="note-form">
       <input
         type="text"
+        className="note-input"
+        placeholder="เขียนโน้ตใหม่..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="add-btn">Add Note</button>
+
     </form>
   );
 }

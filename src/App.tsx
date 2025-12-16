@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { type Note } from './types';               // ดึงกฎที่เราสร้างไว้มาใช้
 import NoteForm from './components/NoteForm';     //ต้องมีpathโฟลเดอร์
 import NoteList from './components/NoteList';     //ต้องมีpathโฟลเดอร์
+import './App.css';     //สวมชุดสำเร็จ
 
 function App() {
   // 1. สร้าง State เก็บโน้ตทั้งหมด (เป็น Array ของ Note)
@@ -48,11 +49,20 @@ function App() {
   }, [notes]); // [notes] = ทำทุกครั้งที่ notes เปลี่ยนแปลง
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Sticky Note Wall</h1>
+   // <div style={{ padding: '20px' }}>
+    //  <h1>Sticky Note Wall</h1>
+    //  <NoteForm onAdd={addNote} />
+    //  <NoteList notes={notes} onDelete={deleteNote} />
+  //  </div>
+
+  <div className="app-container"> {/* เพิ่ม className ตรงนี้ */}
+      <h1>📒Sticky Note Wall 📌</h1>
       <NoteForm onAdd={addNote} />
+      <hr style={{ border: 'none', margin: '20px 0' }}/>
       <NoteList notes={notes} onDelete={deleteNote} />
     </div>
+
+
   );
 }
 export default App;
