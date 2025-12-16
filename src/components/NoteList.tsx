@@ -10,7 +10,7 @@ function NoteList({ notes, onDelete }: NoteListProps) {
   return (
     <div>
       {notes.map((note) => (
-        <div key={note.id} style={{ border: '1px solid black', margin: '5px' }}>
+        <div key={note.id} style={{ border: '0.5px solid black', margin: '5px' }}>
           {note.text}
           <button onClick={() => onDelete(note.id)}>Delete</button>
         </div>
